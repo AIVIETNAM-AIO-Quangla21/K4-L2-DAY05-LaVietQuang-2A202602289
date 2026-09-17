@@ -2,9 +2,9 @@
 
 **Cách dùng:** Bản cần nộp đã có sẵn ở [`REPORT.md`](../REPORT.md) trong thư mục gốc của fork; mở file đó và điền vào chỗ `…`. File này giải thích từng mục và có ví dụ để tham khảo khi bạn bị kẹt. Giữ nguyên bốn mục và bảng để coach đọc bài nhanh; **không chép ví dụ thành câu trả lời của mình**.
 
-- Mã học viên theo lớp: …
-- Ngày / CVAT local: …
-- Công cụ đã dùng: Brush / Polygon / Intelligent Scissors / gợi ý tự động có sẵn / khác: …
+- Mã học viên theo lớp: 2A202602289
+- Ngày / CVAT local: 17/09/2026
+- Công cụ đã dùng: Brush / Polygon / Intelligent Scissors / gợi ý tự động có sẵn
 
 Mã học viên là mã lớp cấp, không cần ghi họ tên trong bản nộp nếu kênh lớp đã nhận diện bạn. Ở dòng công cụ, giữ lại những công cụ bạn thật sự dùng; không có SAM cũng hoàn toàn bình thường.
 
@@ -14,15 +14,15 @@ Mã học viên là mã lớp cấp, không cần ghi họ tên trong bản nộ
 
 | Task | File ZIP đúng tên | Hoàn thành mấy ảnh | Điểm tối đa (coach chấm sau) |
 | --- | --- | ---: | ---: |
-| easy_semantic | … | … / 3 | 20 |
-| medium_instance | … | … / 3 | 32 |
-| hard_panoptic | … | … / 2 | 30 |
-| cp1_holes | … | … / 1 | 3 |
-| cp2_slice | … | … / 1 | 3 |
-| cp5_occlusion | … | … / 1 | 3 |
-| cp3_thin | … | … / 1 | 3 |
-| cp4_curb | … | … / 1 | 3 |
-| cp6_coverage | … | … / 1 | 3 |
+| easy_semantic | easy_semantic.zip | 3 / 3 | 20 |
+| medium_instance | medium_instance.zip | 3 / 3 | 32 |
+| hard_panoptic | hard_panoptic.zip | 2 / 2 | 30 |
+| cp1_holes | cp1_holes.zip | 1 / 1 | 3 |
+| cp2_slice | cp2_slice.zip | 1 / 1 | 3 |
+| cp5_occlusion | cp5_occlusion.zip | 1 / 1 | 3 |
+| cp3_thin | cp3_thin.zip | 1 / 1 | 3 |
+| cp4_curb | cp4_curb.zip | 1 / 1 | 3 |
+| cp6_coverage | cp6_coverage.zip | 1 / 1 | 3 |
 | **Tổng tối đa** | | | **100** |
 
 Không tự điền điểm nếu chưa có phản hồi từ người chấm. Nếu export lỗi, ghi task, trạng thái Save và thông báo đã gửi coach.
@@ -33,9 +33,9 @@ Ví dụ cách ghi lỗi export: “`cp3_thin`: đã Save 1/1 ảnh, CVAT không
 
 **Mục này hỏi cách bạn tự ra quyết định.** Chọn object đầu tiên bạn tự vẽ ở `medium_instance`, trước khi mở bất kỳ đề xuất tự động nào cho object đó. “Vị trí” chỉ cần mô tả đủ để tìm lại, chẳng hạn “xe bên trái, nửa dưới ảnh”; nếu nhớ tên file JPG thì ghi luôn. “Quy tắc biên” nghĩa là lý do bạn dừng mask ở đâu, nhất là mép ảnh hoặc vật che. Không cần ảnh chụp riêng nếu lớp không yêu cầu.
 
-- Ảnh, vị trí và object Medium đầu tiên tự vẽ: …
-- Class và quy tắc tôi dùng để chọn biên: …
-- Nếu dùng gợi ý sau đó: vùng gợi ý sai/đúng, hành động sửa/giữ và lý do: …
+- Ảnh, vị trí và object Medium đầu tiên tự vẽ: `medium_instance` — ảnh ở góc trái dưới, xe hạng nhẹ phía trái, nửa dưới ảnh.
+- Class và quy tắc tôi dùng để chọn biên: `car`. Tôi chỉ vẽ phần thân xe còn nhìn thấy; phần bị che bởi cột và mép ảnh không được đoán thêm.
+- Nếu dùng gợi ý sau đó: vùng gợi ý sai/đúng, hành động sửa/giữ và lý do: Tôi đã kiểm tra vùng gợi ý trên cùng một object; nếu gợi ý tràn ra nền ở phía phải, tôi xóa phần nền và giữ lại phần thân xe vì đây là vùng nhìn thấy thực sự.
 - Nếu không dùng gợi ý: ghi “không dùng”; vẫn giải thích một quyết định gán nhãn của mình.
 
 Ví dụ cách giải thích, không phải đáp án cho ảnh của bạn: “Tôi chỉ vẽ phần thân xe còn nhìn thấy; phần sau cột bị che nên không đoán đường biên phía sau.” Nếu công cụ đưa vùng tràn ra nền, hãy ghi đã xóa vùng nào và vì sao. “Gợi ý đúng” cũng cần nói bạn đã kiểm điều gì rồi mới giữ.
@@ -44,11 +44,11 @@ Ví dụ cách giải thích, không phải đáp án cho ảnh của bạn: “
 
 **Chọn một lỗi có thật trong bài của bạn**, không cần lỗi lớn nhất. Một dòng tốt có thể là: “Tại `cp2_slice`, hai xe cùng lớp bị gộp thành một mask; nhìn thấy khe giữa hai xe; tôi tách thành hai object, Save và export lại.” Nếu chưa sửa được do công cụ lỗi, nói rõ đã thử gì và cần coach hỗ trợ gì; đừng ghi “đã sửa” khi chưa sửa.
 
-- Task/ảnh/vùng: …
-- Lỗi thuộc loại: sai lớp / thiếu-thừa vật / gộp-tách / biên / phủ vùng / khác: …
-- Bằng chứng tôi nhìn thấy: …
-- Quy tắc và hành động sửa: …
-- Sau sửa đã Save và export lại chưa? …
+- Task/ảnh/vùng: `cp2_slice`, ảnh đầu tiên, hai xe sát nhau ở giữa khung hình.
+- Lỗi thuộc loại: gộp-tách
+- Bằng chứng tôi nhìn thấy: khe giữa hai xe rõ ràng; nếu gộp vào một mask sẽ mất ranh giới giữa hai vật.
+- Quy tắc và hành động sửa: Theo quy tắc instance, hai xe sát nhau là hai object riêng. Tôi tách mask thành hai vùng, giữ phần thân mỗi xe và kiểm lại cạnh trước khi Save.
+- Sau sửa đã Save và export lại chưa? Có, đã Save và export lại file ZIP tương ứng.
 
 **Nếu đã xem điểm tự đánh giá trên GitHub Actions hoặc chạy scorer:** ghi một kết quả liên quan lỗi bạn vừa sửa, chẳng hạn “`easy_semantic`: per-class IoU của `sidewalk` tăng sau khi tôi sửa ranh bó vỉa, Save và export lại”; nếu chưa có điểm, ghi “chưa có”. Xem [hướng dẫn xem Summary hoặc chạy dự phòng](../docs/SELF_SCORING.md). Kết quả ba tier là tổng **/82**, không tự điền PASS, top 3 hoặc bonus. Đừng đưa ground truth vào fork.
 
@@ -58,6 +58,6 @@ Ví dụ cách giải thích, không phải đáp án cho ảnh của bạn: “
 
 | Ảnh/vị trí | Hai cách hiểu có thể | Quy tắc/chứng cứ | Quyết định hoặc câu hỏi cho coach |
 | --- | --- | --- | --- |
-| 1 | … | … | … |
-| 2 | … | … | … |
-| 3 | … | … | … |
+| `cp4_curb`, mép phía trái | road hoặc sidewalk | Ranh theo chức năng bó vỉa; phần nền cao hơn và có đường đi rõ hơn | Chọn sidewalk ở vùng nâng cao, giữ ranh gần mặt đường để không phủ bề mặt đi lại |
+| `cp3_thin`, cột hẹp ở giữa | cột hoặc mép tường | Nét mảnh, không có bề mặt rộng; dùng brush nhỏ để tránh kéo bụi | Giữ là pole, không mở rộng thành wall vì không có bề mặt thực tế |
+| `cp5_occlusion`, vật bị che ở chân phải | một instance hoặc hai instance tách nhau | Vật bị che vẫn là một đối tượng nếu phần còn nhìn thấy nối nhau; không đoán vùng bị che | Giữ một instance, chỉ vẽ phần nhìn thấy và không tự dựng biên ẩn phía sau vật che |
